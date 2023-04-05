@@ -79,3 +79,68 @@ function cadastrar2(usuarios, ...novosUsuarios) {
 
 let usuarios2 = ["Marcelo", "Henrique"];
 let novosUsuarios2 = cadastrar(usuarios, "Mera", "Silva");
+
+// Array
+
+const lista = [1, 2, 3, 4, 5];
+const novaLista = lista.map(function (item, index) {
+  return item * index;
+});
+console.log(novaLista);
+
+// recude = soma o valor do array
+const soma = lista.reduce(function (total, proximo) {
+  return total + proximo;
+});
+console.log(soma);
+
+const find = lista.find(function (item) {
+  return item === 6;
+});
+console.warn(find);
+
+function adicionar(...numeros) {
+  //let total = numeros.reduce((total, proximo) => total + proximo);   // função anonima
+
+  let total = numeros.reduce((total, proximo) => {
+    let soma = total + proximo;
+    return soma;
+  });
+
+  console.log(total);
+}
+adicionar(1, 2, 3, 4, 5);
+
+// includes = verifica  se aquilo que digitou no includes esta dentro do que esta mandando
+let nomes = ["Marcelo", "Henrique", "Mera"];
+console.log(nomes.includes("Marcelo"));
+
+if (nomes.includes("Marcela")) {
+  console.log("Marcelo está na lista");
+} else {
+  console.log("Marcelo não esta na lista");
+}
+
+let nome3 = "Marcelo";
+//endswith = verifica se termina com aquilo que esta passando;
+console.log(nome3.endsWith("lo")); // return true
+
+//startwith = verifica se começa com aquilo que esta passando;
+console.log(nome3.endsWith("Mar")); // return true
+
+//some = alguns (tradução)
+console.log(nomes.some((nomecallback) => nomecallback === "Marcelo"));
+//every = todo (tradução)
+
+let nomes4 = [
+  { nome: "Marcelo", idade: 34 },
+  { nome: "Henrique", idade: 18 },
+  { nome: "Mera", idade: 30 },
+];
+
+if (nomes4.every((nome5) => nome5.idade >= 18)) {
+  // verificando se TODOS são maiores de 18 anos (caso algum seja menor ele da FALSE)
+  console.log("Maior de idade");
+} else {
+  console.log("Menor de idade");
+}
